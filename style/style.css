@@ -50,7 +50,7 @@ table {
 
 .container {
   margin: 0 auto;
-  width: 1600px;
+  width: 1590px;
 }
 
 .header {
@@ -60,6 +60,7 @@ table {
   left: 50%;
   transform: translate(-50%);
   background-color: #FFFFFF;
+  z-index: 5;
 }
 .header__social {
   display: flex;
@@ -289,6 +290,238 @@ table {
   line-height: 140%;
   color: #1E212C;
   padding-right: 360px;
+}
+
+.faqs {
+  display: flex;
+  margin-top: 150px;
+  margin-bottom: 180px;
+}
+.faqs__container {
+  width: 100%;
+}
+.faqs > .block-title {
+  margin-right: 256px;
+}
+.faqs__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #D7D7D7;
+  margin-top: 30px;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 140%;
+  color: #1E212C;
+}
+.faqs__item:first-child {
+  margin-top: 19px;
+}
+.faqs__item-subtitle {
+  font-size: 18px;
+  font-weight: 400;
+  padding-top: 30px;
+  padding-right: 94px;
+}
+.faqs__toggle-vision {
+  border: none;
+  background-color: transparent;
+  color: #3D8BFC;
+  font-size: 30px;
+  cursor: pointer;
+  line-height: 110%;
+}
+
+.gallery {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 180px;
+  z-index: 1;
+}
+.gallery > .block-title {
+  margin-bottom: 45px;
+}
+.gallery__slider {
+  width: 100%;
+  overflow: hidden;
+  margin: auto;
+  position: relative;
+}
+
+.slide {
+  display: flex;
+  min-width: 100%;
+  box-sizing: border-box;
+}
+.slide > div:first-child {
+  margin-right: 30px;
+}
+.slide > div > img {
+  width: 780px;
+  display: block;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+.slider__nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  left: 87%;
+  display: flex;
+}
+.slider__nav > button {
+  background-color: #3D8BFC;
+  border-radius: 100px;
+  color: #FFFFFF;
+  border: none;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slider__nav > button:first-child {
+  margin-right: 40px;
+}
+
+#next {
+  rotate: 180deg;
+}
+
+.reviews {
+  margin-bottom: 180px;
+}
+.reviews__header {
+  display: flex;
+  margin-bottom: 80px;
+}
+.reviews__img {
+  margin-right: 52px;
+}
+.reviews__title {
+  margin-top: 19px;
+}
+.reviews__text-content {
+  display: flex;
+}
+
+.review {
+  width: 512px;
+  margin-right: 30px;
+  background-color: #F3F7FE;
+  padding: 40px;
+  border-radius: 10px;
+  color: #1E212C;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 140%;
+}
+.review:last-child {
+  margin: 0;
+}
+.review__name {
+  padding-top: 36px;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.blog {
+  margin-bottom: 180px;
+}
+.blog > .block-title {
+  margin-top: 19px;
+}
+.blog__links {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 45px;
+}
+.blog__link {
+  width: 510px;
+  text-decoration: none;
+}
+
+.link__text {
+  color: #1E212C;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 120%;
+  display: flex;
+  align-items: baseline;
+  padding-right: 15px;
+  margin-top: 15px;
+}
+.link__dot {
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 100px;
+  background-color: #3D8BFC;
+  margin-right: 15px;
+}
+
+.contact-us {
+  padding-top: 150px;
+  padding-left: 405px;
+  background-color: #3D8BFC;
+  background-image: url("../img/bg-contactUs.png");
+  background-repeat: no-repeat;
+  border-radius: 10px;
+}
+.contact-us > .block-name {
+  color: #FFFFFF;
+}
+.contact-us > .block-title {
+  color: #FFFFFF;
+  margin-top: 19px;
+}
+
+.form {
+  margin-top: 45px;
+}
+.form__input {
+  border: 1px solid #FFFFFF;
+  border-radius: 100px;
+  padding: 19px 0 16px 16px;
+  background-color: transparent;
+  width: 359px;
+  color: rgba(255, 255, 255, 0.6);
+}
+.form__input:focus {
+  outline: none;
+}
+.form__input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+.form__input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+.form__name-email {
+  margin-bottom: 15px;
+}
+.form__name-email > input:first-child {
+  margin-right: 15px;
+}
+.form__tel-message {
+  margin-bottom: 15px;
+}
+.form__tel-message > input:first-child {
+  margin-right: 15px;
+}
+.form__submit > .submit {
+  padding: 19px 154.5px;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 100px;
+  color: #3D8BFC;
+  background-color: #FFFFFF;
+  text-transform: uppercase;
 }
 
 .block-title {

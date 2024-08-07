@@ -152,3 +152,179 @@
         line-height: 140%
         color: $dark
         padding-right: 360px
+.faqs
+    display: flex
+    margin-top: 150px
+    margin-bottom: 180px
+    &__container
+        width: 100%
+    &>.block-title
+        margin-right: 256px
+    &__item
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+        padding-bottom: 30px
+        border-bottom: 1px solid #D7D7D7
+        margin-top: 30px
+        font-weight: 500
+        font-size: 22px
+        line-height: 140%
+        color: $dark
+        &:first-child
+            margin-top: 19px
+    &__item-subtitle
+        font-size: 18px
+        font-weight: 400
+        padding-top: 30px
+        padding-right: 94px
+    &__toggle-vision
+        border: none
+        background-color: transparent
+        color: $blue
+        font-size: 30px
+        cursor: pointer
+        line-height: 110%
+.gallery
+    position: relative
+    overflow: hidden
+    margin-bottom: 180px
+    z-index: 1
+    &>.block-title
+        margin-bottom: 45px
+    &__slider
+        width: 100%
+        overflow: hidden
+        margin: auto
+        position: relative
+.slide
+    display: flex
+    min-width: 100%
+    box-sizing: border-box
+    &>div:first-child
+        margin-right: 30px
+    &>div>img
+        width: 780px
+        display: block
+
+.slider
+    display: flex
+    transition: transform 0.5s ease-in-out
+    &__nav
+        position: absolute
+        top: 0
+        width: 100%
+        left: 87%
+        display: flex
+        &>button
+            background-color: $blue
+            border-radius: 100px
+            color: #FFFFFF
+            border: none
+            width: 80px
+            height: 80px
+            cursor: pointer
+            display: flex
+            align-items: center
+            justify-content: center
+            &:first-child
+                margin-right: 40px
+#next
+    rotate: 180deg
+.reviews
+    margin-bottom: 180px
+    &__header
+        display: flex
+        margin-bottom: 80px
+    &__img
+        margin-right: 52px
+    &__title
+        margin-top: 19px
+    &__text-content
+        display: flex
+.review
+    width: 512px
+    margin-right: 30px
+    background-color: $blueBg
+    padding: 40px
+    border-radius: 10px
+    color: $dark
+    font-size: 18px
+    font-weight: 400
+    line-height: 140%
+    &:last-child
+        margin: 0
+    &__name
+        padding-top: 36px
+        font-weight: 700
+        font-size: 16px
+.blog
+    margin-bottom: 180px
+    &>.block-title
+        margin-top: 19px
+    &__links
+        display: flex
+        justify-content: space-around
+        margin-top: 45px
+    &__link
+        width: 510px
+        text-decoration: none
+.link
+    &__text
+        color: $dark
+        font-size: 24px
+        font-weight: 500
+        line-height: 120%
+        display: flex
+        align-items: baseline
+        padding-right: 15px
+        margin-top: 15px
+    &__dot
+        flex-shrink: 0
+        width: 15px
+        height: 15px
+        border-radius: 100px
+        background-color: $blue
+        margin-right: 15px
+.contact-us
+    padding-top: 150px
+    padding-left: 405px
+    background-color: $blue
+    background-image: url('../img/bg-contactUs.png')
+    background-repeat: no-repeat
+    border-radius: 10px
+    &>.block-name
+        color: #FFFFFF
+    &>.block-title
+        color: #FFFFFF
+        margin-top: 19px
+.form
+    margin-top: 45px
+    &__input
+        border: 1px solid #FFFFFF
+        border-radius: 100px
+        padding: 19px 0 16px 16px
+        background-color: transparent
+        width: 375px - 16px
+        color: rgba(255, 255, 255, 0.6)
+        &:focus
+            outline: none
+        &::placeholder
+            color: rgba(255, 255, 255, 0.6)
+    &__name-email
+        margin-bottom: 15px
+        &>input:first-child
+            margin-right: 15px
+    &__tel-message
+        margin-bottom: 15px
+        &>input:first-child
+            margin-right: 15px
+    &__submit>.submit
+        padding: 19px 154.5px
+        font-size: 16px
+        font-weight: 700
+        border: none
+        border-radius: 100px
+        color: $blue
+        background-color: #FFFFFF
+        text-transform: uppercase
