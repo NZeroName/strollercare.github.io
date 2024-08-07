@@ -1,0 +1,38 @@
+.container
+    margin: 0 auto
+    width: 1600px
+.header
+    width: 100%
+    position: fixed
+    top: 0
+    left: 50%
+    transform: translate(-50%)
+    background-color: #FFFFFF
+    &__social
+        display: flex
+    &__wrapper
+        display: flex
+        align-items: center
+        justify-content: space-between
+.social__item
+    height: 39px
+    width: 39px
+    border-radius: 100px
+    background-color: #F0F0F0
+    margin-right: 13px
+.navigate
+    display: flex
+    &>li:last-child.navigate__item
+        margin: 0
+    &__item
+        margin-right: 29px
+        font-size: 14px
+        font-weight: 500
+        color: $dark
+        text-decoration: none
+        &:hover
+            cursor: pointer
+            color: $blue
+            border-bottom: 1px solid $blue
+    &:last-child
+        margin: 0
