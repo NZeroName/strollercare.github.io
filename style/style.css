@@ -74,9 +74,13 @@ table {
 .social__item {
   height: 39px;
   width: 39px;
+  border: 1px solid #3D8BFC;
   border-radius: 100px;
-  background-color: #F0F0F0;
+  background-color: transparent;
   margin-right: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .navigate {
@@ -318,6 +322,9 @@ table {
 .faqs__item:first-child {
   margin-top: 19px;
 }
+.faqs__item h3 {
+  font-weight: 500;
+}
 .faqs__item-subtitle {
   font-size: 18px;
   font-weight: 400;
@@ -466,19 +473,32 @@ table {
 }
 
 .contact-us {
+  position: relative;
+}
+.contact-us__container {
   padding-top: 150px;
+  padding-bottom: 150px;
   padding-left: 405px;
   background-color: #3D8BFC;
   background-image: url("../img/bg-contactUs.png");
   background-repeat: no-repeat;
   border-radius: 10px;
+  position: relative;
 }
-.contact-us > .block-name {
+.contact-us__container > .block-name {
   color: #FFFFFF;
 }
-.contact-us > .block-title {
+.contact-us__container > .block-title {
   color: #FFFFFF;
   margin-top: 19px;
+}
+.contact-us__dark-block {
+  position: absolute;
+  background-color: #1E212C;
+  bottom: 0;
+  height: 308px;
+  width: 100%;
+  z-index: -1;
 }
 
 .form {
@@ -513,15 +533,81 @@ table {
 .form__tel-message > input:first-child {
   margin-right: 15px;
 }
-.form__submit > .submit {
-  padding: 19px 154.5px;
-  font-size: 16px;
-  font-weight: 700;
-  border: none;
-  border-radius: 100px;
-  color: #3D8BFC;
-  background-color: #FFFFFF;
-  text-transform: uppercase;
+.form__submit {
+  margin-top: 7px;
+}
+
+.footer {
+  background-color: #1E212C;
+  width: 100%;
+  padding-top: 90px;
+}
+.footer__container {
+  display: flex;
+}
+.footer__navigate {
+  margin-top: 10px;
+  margin-left: 151px;
+  margin-right: 188px;
+  text-wrap: nowrap;
+}
+.footer__navigate li {
+  margin-bottom: 20px;
+}
+.footer__navigate .navigate__item {
+  color: #FFFFFF;
+}
+.footer__navigate .navigate__leftside {
+  margin-right: 171px;
+}
+.footer__follow {
+  margin-right: 268px;
+  text-wrap: nowrap;
+}
+.footer__follow > span {
+  color: #FFFFFF;
+  font-size: 22px;
+  font-weight: 600;
+}
+.footer__form-title {
+  color: #FFFFFF;
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+.footer__form-subtitle {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  font-weight: 500;
+}
+.footer__form > .form {
+  margin-top: 27px;
+  display: block;
+}
+.footer__form .submit {
+  margin-top: 15px;
+  width: 375px;
+  padding: 19px;
+}
+.footer__form .form__policy {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+}
+.footer__form .form__policy > a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.follow__social {
+  margin-top: 25px;
+  display: flex;
+}
+.follow__social > .social__item {
+  border: 1px solid #FFFFFF;
+  background-color: transparent;
 }
 
 .block-title {
@@ -536,6 +622,22 @@ table {
   color: #3D8BFC;
   font-weight: 700;
   text-transform: uppercase;
+}
+
+.submit {
+  padding: 19px;
+  width: 375px;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 100px;
+  color: #3D8BFC;
+  background-color: #FFFFFF;
+  text-transform: uppercase;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 * {
