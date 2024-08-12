@@ -1,26 +1,51 @@
-const slider = document.querySelector(".slider");
-const slides = document.querySelectorAll(".slide");
 const prevBtn = document.getElementById("prev");
 const nextBtn = document.getElementById("next");
-
+const sliderContainer = document.querySelector(".gallery__slider");
 let index = 0;
+let startX = 0;
+let endX = 0;
 
 function showSlide(i) {
+  const slider = document.querySelector(".slider");
   slider.style.transform = `translateX(${-i * 100}%)`;
 }
 
 function nextSlide() {
+  const slides = document.querySelectorAll(".slide");
   index = (index + 1) % slides.length;
   showSlide(index);
+  console.log("следующий");
 }
 
 function prevSlide() {
+  const slides = document.querySelectorAll(".slide");
   index = (index - 1 + slides.length) % slides.length;
   showSlide(index);
+  console.log("предыдущий");
+}
+function handleTouchStart(event) {
+  startX = event.touches[0].clientX;
 }
 
+function handleTouchMove(event) {
+  endX = event.touches[0].clientX;
+}
+
+function handleTouchEnd() {
+  if (startX - endX > 50) {
+    nextSlide();
+  }
+  if (endX - startX > 50) {
+    prevSlide();
+  }
+}
 nextBtn.addEventListener("click", nextSlide);
 prevBtn.addEventListener("click", prevSlide);
+
+
+sliderContainer.addEventListener("touchstart", handleTouchStart, false);
+sliderContainer.addEventListener("touchmove", handleTouchMove, false);
+sliderContainer.addEventListener("touchend", handleTouchEnd, false);
 
 document.addEventListener("DOMContentLoaded", function () {
   // Находим все ссылки, которые начинаются с "#", т.е. якорные ссылки
@@ -71,5 +96,33 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     // Запуск анимации
     requestAnimationFrame(animation);
+  }
+
+  if (window.innerWidth >= 768 && window.innerWidth <= 1199) {
+    const slider = document.querySelector(".slider");
+    slider.remove();
+    document.querySelector(".gallery__slider").insertAdjacentHTML(
+      "beforeend",
+      `<div class="slider">
+              <div class="slide">
+                <div><img src="img/slide1.png" alt="slide" /></div>
+              </div>
+              <div class="slide">
+                <div><img src="img/slide2.png" alt="slide" /></div>
+              </div>
+              <div class="slide">
+                <div><img src="img/slide3.png" alt="slide" /></div>
+              </div>
+              <div class="slide">
+                <div><img src="img/slide4.png" alt="slide" /></div>
+              </div>
+              <div class="slide">
+                <div><img src="img/slide5.png" alt="slide" /></div>
+              </div>
+              <div class="slide">
+                <div><img src="img/slide6.png" alt="slide" /></div>
+              </div>
+            </div>`
+    );
   }
 });

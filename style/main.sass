@@ -26,11 +26,11 @@
         text-transform: uppercase
 .about-us
     display: flex
-    align-items: center
     margin: 180px 0
     &__content
         margin-left: 135px
-
+        margin-top: 132px
+        margin-bottom: 113px
     &__title
         margin-top: 20px
         margin-bottom: 45px
@@ -42,6 +42,16 @@
         color: $dark
         &:last-child
             padding-top: 12px
+    &__img
+        background-image: url('../img/children.png')
+        display: flex
+        align-items: flex-end
+        width: 100%
+        border-radius: 10px
+        flex: 0 0 645px
+        background-repeat: no-repeat
+        & img
+            padding: 0 0 20px 20px
 
 .services
     display: flex
@@ -61,13 +71,11 @@
         margin-right: 10px
         background-color: $blueBg
         border-radius: 10px
-        width: 365px
     &__info
         background-color: $blue
         border-radius: 10px
         padding-left: 50px
         display: flex
-        width: 810px
     &__title
         font-size: 26px
         font-weight: 600
@@ -80,7 +88,6 @@
         font-weight: 400
         line-height: 140%
         color: #FFFFFF
-        padding-right: 55px
     &__img>img
         display: block
 
@@ -95,8 +102,10 @@
         font-size: 14px
         font-weight: 500
         color: $dark
-        text-wrap: nowrap
-    &__model
+        width: 94px
+        margin-right: 56px
+        line-height: 140%
+    &__price
         font-size: 16px
         font-weight: 700
         color: $blue
@@ -120,6 +129,7 @@
     &:nth-child(odd)
         background-color: #FFFFFF
         padding: 60px 0px 0 47px
+        border-radius: 10px
     &:last-child
         align-items: center
         padding: 43px 0px 43px 47px
