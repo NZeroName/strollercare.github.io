@@ -1,51 +1,146 @@
-const prevBtn = document.getElementById("prev");
-const nextBtn = document.getElementById("next");
-const sliderContainer = document.querySelector(".gallery__slider");
-let index = 0;
-let startX = 0;
-let endX = 0;
+// Универсальная функция для инициализации слайдера
+function initSlider({ sliderSelector, slideSelector, prevBtnSelector, nextBtnSelector, slidesPerView = 1, cloneSlides = false }) {
+    // Получаем элементы слайдера и кнопок
+    const slider = document.querySelector(sliderSelector);
+    const slides = document.querySelectorAll(slideSelector);
+    const prevBtn = document.getElementById(prevBtnSelector);
+    const nextBtn = document.getElementById(nextBtnSelector);
+    const totalSlides = slides.length; // Общее количество слайдов
+    let index = 0; // Индекс текущего слайда
+    let startX = 0; // Начальная позиция касания
+    let endX = 0; // Конечная позиция касания
+    const slideWidth = 100 / slidesPerView; // Ширина одного слайда в процентах
 
-function showSlide(i) {
-  const slider = document.querySelector(".slider");
-  slider.style.transform = `translateX(${-i * 100}%)`;
+    // Клонирование первых слайдов, если это необходимо для непрерывного скроллинга
+    if (cloneSlides) {
+        for (let i = 0; i < slidesPerView; i++) {
+            const clonedSlide = slides[i].cloneNode(true); // Клонируем слайд
+            slider.appendChild(clonedSlide); // Добавляем клон в конец слайдера
+        }
+        for (let i = totalSlides - slidesPerView; i < totalSlides; i++) {
+            const clonedSlide = slides[i].cloneNode(true); // Клонируем слайд
+            slider.insertBefore(clonedSlide, slider.firstChild); // Добавляем клон в начало слайдера
+        }
+        index = slidesPerView; // Начальная установка индекса
+        slider.style.transform = `translateX(${-index * slideWidth}%)`;
+    }
+
+    // Функция для отображения слайда с заданным индексом
+    function showSlide(i, withTransition = true) {
+        const translateXValue = -i * slideWidth;
+        slider.style.transition = withTransition ? 'transform 0.5s ease-in-out' : 'none'; // Применяем плавный переход
+        slider.style.transform = `translateX(${translateXValue}%)`; // Сдвигаем слайдер
+    }
+
+    // Функция для переключения на следующий слайд
+    function nextSlide() {
+        index++;
+        showSlide(index);
+        if (index >= totalSlides + slidesPerView) {
+            setTimeout(() => {
+                index = slidesPerView; // Возвращаемся к первому слайду без клонирования
+                showSlide(index, false); // Без перехода
+            }, 500); // Время должно соответствовать времени transition
+        }
+    }
+
+    // Функция для переключения на предыдущий слайд
+    function prevSlide() {
+        index--;
+        showSlide(index);
+        if (index < slidesPerView) {
+            setTimeout(() => {
+                index = totalSlides; // Возвращаемся к последнему слайду без клонирования
+                showSlide(index, false); // Без перехода
+            }, 500); // Время должно соответствовать времени transition
+        }
+    }
+
+    // Обработка начала касания
+    function handleTouchStart(event) {
+        startX = event.touches[0].clientX; // Сохраняем начальную позицию касания
+    }
+
+    // Обработка движения касания
+    function handleTouchMove(event) {
+        endX = event.touches[0].clientX; // Обновляем конечную позицию касания
+    }
+
+    // Обработка завершения касания
+    function handleTouchEnd() {
+        const deltaX = startX - endX;
+        // Если свайп влево, переключаем на следующий слайд
+        if (deltaX > 50) {
+            nextSlide();
+        }
+        // Если свайп вправо, переключаем на предыдущий слайд
+        if (deltaX < -50) {
+            prevSlide();
+        }
+    }
+
+    // Добавляем обработчики событий для кнопок
+    nextBtn.addEventListener("click", nextSlide);
+    prevBtn.addEventListener("click", prevSlide);
+
+    // Добавляем обработчики событий для сенсорных событий
+    slider.addEventListener("touchstart", handleTouchStart, false);
+    slider.addEventListener("touchmove", handleTouchMove, false);
+    slider.addEventListener("touchend", handleTouchEnd, false);
 }
 
-function nextSlide() {
-  const slides = document.querySelectorAll(".slide");
-  index = (index + 1) % slides.length;
-  showSlide(index);
-  console.log("следующий");
+// Инициализация галереи с одним слайдом на экране
+function gallerySlider() {
+    initSlider({
+        sliderSelector: '.gallery__slider .slider',
+        slideSelector: '.gallery__slider .slide',
+        prevBtnSelector: 'prev',
+        nextBtnSelector: 'next',
+        slidesPerView: 1,// Количество слайдов, отображаемых одновременно
+        cloneSlides: true 
+    });
 }
 
-function prevSlide() {
-  const slides = document.querySelectorAll(".slide");
-  index = (index - 1 + slides.length) % slides.length;
-  showSlide(index);
-  console.log("предыдущий");
-}
-function handleTouchStart(event) {
-  startX = event.touches[0].clientX;
-}
-
-function handleTouchMove(event) {
-  endX = event.touches[0].clientX;
-}
-
-function handleTouchEnd() {
-  if (startX - endX > 50) {
-    nextSlide();
+// Инициализация блога с двумя слайдами на экране
+function blogSlider() {
+    if(window.innerWidth >= 360 && window.innerWidth <= 768){
+      initSlider({
+        sliderSelector: '.blog__links',
+        slideSelector: '.blog__link',
+        prevBtnSelector: 'blog-prev',
+        nextBtnSelector: 'blog-next',
+        slidesPerView: 1, // Количество слайдов, отображаемых одновременно
+        cloneSlides: true // Клонирование слайдов для непрерывного скроллинга
+    })} else {
+    initSlider({
+        sliderSelector: '.blog__links',
+        slideSelector: '.blog__link',
+        prevBtnSelector: 'blog-prev',
+        nextBtnSelector: 'blog-next',
+        slidesPerView: 2, // Количество слайдов, отображаемых одновременно
+        cloneSlides: true // Клонирование слайдов для непрерывного скроллинга
+    });
   }
-  if (endX - startX > 50) {
-    prevSlide();
-  }
 }
-nextBtn.addEventListener("click", nextSlide);
-prevBtn.addEventListener("click", prevSlide);
 
+function toggleMenu() {
+  let menubtn = document.querySelector('.mobail-menu__toglebtn')
+  let mobileNavigate = document.querySelector('.header__mobail-menu-container')
+  let shadow = document.querySelector('.mobail-menu__shadow')
+  menubtn.addEventListener('click', (e) => {
+    e.stopPropagation
+    menubtn.classList.toggle('toglebtn-active')
+    mobileNavigate.classList.toggle('header__mobail-menu--active')
+    shadow.classList.toggle('mobail-menu__shadow--active')
+    if(shadow.classList.contains('mobail-menu__shadow--active')){
+      document.querySelector('body').style.overflow = 'hidden'
+    } else document.querySelector('body').style.overflow = 'auto'
+  })
+  // для активной кнопки toglebtn-active
+  // при показе меню header__mobail-menu--active
+  // подложка серая mobail-menu__shadow
+}
 
-sliderContainer.addEventListener("touchstart", handleTouchStart, false);
-sliderContainer.addEventListener("touchmove", handleTouchMove, false);
-sliderContainer.addEventListener("touchend", handleTouchEnd, false);
 
 document.addEventListener("DOMContentLoaded", function () {
   // Находим все ссылки, которые начинаются с "#", т.е. якорные ссылки
@@ -98,7 +193,7 @@ document.addEventListener("DOMContentLoaded", function () {
     requestAnimationFrame(animation);
   }
 
-  if (window.innerWidth >= 768 && window.innerWidth <= 1199) {
+  if ((window.innerWidth >= 768 && window.innerWidth <= 1199) || (window.innerWidth >= 360 && window.innerWidth <= 768)) {
     const slider = document.querySelector(".slider");
     slider.remove();
     document.querySelector(".gallery__slider").insertAdjacentHTML(
@@ -124,5 +219,11 @@ document.addEventListener("DOMContentLoaded", function () {
               </div>
             </div>`
     );
+    document.querySelector('.contact-us__container').style.backgroundImage = 'url(../img/form-tablet.png)'
+    blogSlider()
+    toggleMenu()
   }
+  // Запуск слайдеров
+gallerySlider();
+
 });

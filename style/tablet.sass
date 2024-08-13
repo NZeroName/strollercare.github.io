@@ -16,13 +16,31 @@
         align-items: flex-start
     .header__social
         display: none
+    .header__mobail-menu-container
+        width: 0px
+        overflow: hidden
+        opacity: 0
     .header__mobail-menu
         display: flex
+        height: 50px
+    .header__mobail-menu--active
+        display: block
+        width: 369px
+        height: 100vh
+        background-color: #FFFFFF
+        padding: 20px 24px 0 61px
+        z-index: 30
+        position: absolute
+        top: 0
+        right: 0
+        opacity: 1
+        transition: width 0.3s, opacity 0.4s 0.1s
     .mobail-menu
-        display: none
+        display: block
         margin-right: 120px
+        margin-top: 110px
         &__social
-            display: none
+            display: flex
             margin-right: auto
     .navigate
         display: flex
@@ -30,21 +48,50 @@
 
         & > li
             margin-bottom: 40px
-
+    .mobail-menu__shadow
+        position: absolute
+        width: 100%
+        height: 100vh
+        background-color: #5c5c5c
+        left: 0
+        top: 0
+        opacity: 70%
     .mobail-menu__toglebtn
         background-color: $blue
         padding: 17px 14px
         width: 26px
+        height: 16px
         border-radius: 10px
         margin-bottom: 60px
+        z-index: 100
         &> span
             width: 26px
             border-radius: 100px
             border: 1px solid #FFFFFF
             display: block
             margin-bottom: 5px
+            rotate: 0deg
+            transition: 0.3s
             &:last-child
                 margin-bottom: 0
+    .toglebtn-active
+        background-color: transparent
+        & span
+            border-color: #303030
+            &:nth-child(1)
+                rotate: 50deg
+                margin-bottom: -2px
+                transition: 0.3s
+            &:nth-child(2)
+                rotate: -50deg
+                margin-top: -1px
+                transition: 0.3s
+            &:nth-child(3)
+                opacity: 0
+    .mobail-menu__shadow
+        display: none
+    .mobail-menu__shadow--active
+        display: block
     .main
         &__header
             flex-direction: column
@@ -56,6 +103,7 @@
 
     .title
         font-size: 50px
+        padding-right: 113px
     .subtitle
         margin-top: 39px
         display: flex
@@ -64,14 +112,13 @@
             max-width: max-content
             &:first-child
                 margin-bottom: 10px
-    .footer__container
-        flex-direction: column
+
     .title__img > img
         width: 690px
         height: 435px
         display: block
     .about-us
-        margin-top: 100px
+        margin: 100px 0
         &__content
             margin-left: 35px
             margin-bottom: 22px
@@ -189,3 +236,91 @@
                 width: 12px
             &:first-child
                 margin-right: 20px
+    .reviews
+        margin-bottom: 100px
+    .reviews__header
+        align-items: flex-end
+        margin-bottom: 30px
+    .reviews__img
+        margin-right: 15px
+        &>img
+            width: 225px
+    .reviews__title
+        margin-top: 10px
+    .reviews__text-content
+        flex-wrap: wrap
+    .review
+        padding: 20px 58px 20px 20px
+        margin-right: 0
+        margin-bottom: 20px
+        font-size: 16px
+    .review__name
+        padding-top: 20px
+        font-size: 14px
+    .blog > .slider__nav
+        display: flex
+        top: 9%
+        & button:last-child
+            rotate: 180deg
+    .blog__link
+        width: 330px
+        margin-right: 18px
+        &:last-child
+            margin-right: 0
+        & .text
+            display: -webkit-box
+            -webkit-line-clamp: 2
+            -webkit-box-orient: vertical
+            overflow: hidden
+            text-overflow: ellipsis
+    .link__img
+        width: 330px
+        display: block
+    .link__text
+        font-size: 20px
+        padding: 0
+    .contact-us__container
+        padding: 70px 50px
+    .contact-us__container > .block-title
+        margin-top: 10px
+    .form
+        display: flex
+        flex-wrap: wrap
+        margin-top: 30px
+    .form__input
+        width: 254px
+    .submit
+        width: 272px
+        font-size: 14px
+    .contact-us__dark-block
+        height: 220px
+        bottom: -1px
+    .footer
+        padding-top: 70px
+        padding-bottom: 67px
+    .footer__container
+        flex-wrap: wrap
+        justify-content: center
+    .footer__navigate
+        margin-top: 19px
+        margin-left: 83px
+        margin-right: 83px
+        & .navigate
+            flex-direction: row
+    .footer__navigate .navigate__leftside
+        margin-right: 83px
+    .footer__follow
+        margin-top: 19px
+        margin-right: 0
+    .footer__form
+        margin-top: 78px
+        & .form
+            display: flex
+            flex-direction: column
+            padding-bottom: 5px
+    .footer__form-title
+        font-size: 22px
+    .footer__form .submit
+        width: 272px
+    .footer__form .form__policy
+        margin-top: 17px

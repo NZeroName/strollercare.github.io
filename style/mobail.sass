@@ -1,0 +1,320 @@
+@media (min-width: 360px) and (max-width: 767px)
+    .container
+        width: 330px
+    .block-title
+        font-size: 28px
+    .block-name
+        font-size: 12px
+    .header
+        height: 86px
+    .header__logo img
+        width: 85px
+    .header__navigate
+        display: none
+    .header__wrapper
+        margin-top: 20px
+        align-items: flex-start
+    .header__social
+        display: none
+    .header__mobail-menu-container
+        width: 0px
+        overflow: hidden
+        opacity: 0
+    .header__mobail-menu
+        display: flex
+        height: 50px
+    .header__mobail-menu--active
+        display: block
+        width: 300px
+        height: 100vh
+        background-color: #FFFFFF
+        padding-left: 60px
+        z-index: 30
+        position: absolute
+        top: 0
+        right: 0
+        opacity: 1
+        transition: width 0.3s, opacity 0.4s 0.1s
+    .mobail-menu
+        display: block
+        margin-right: 120px
+        margin-top: 110px
+        &__social
+            display: flex
+            margin-right: auto
+            margin-top: 60px
+    .navigate
+        display: flex
+        flex-direction: column
+        row-gap: 40px
+    .mobail-menu__shadow
+        position: absolute
+        width: 100%
+        height: 100vh
+        background-color: #5c5c5c
+        left: 0
+        top: 0
+        opacity: 70%
+    .mobail-menu__toglebtn
+        background-color: $blue
+        padding: 17px 14px
+        width: 26px
+        height: 16px
+        border-radius: 10px
+        margin-bottom: 60px
+        z-index: 100
+        &> span
+            width: 26px
+            border-radius: 100px
+            border: 1px solid #FFFFFF
+            display: block
+            margin-bottom: 5px
+            rotate: 0deg
+            transition: 0.3s
+            &:last-child
+                margin-bottom: 0
+    .toglebtn-active
+        background-color: transparent
+        & span
+            border-color: #303030
+            &:nth-child(1)
+                rotate: 50deg
+                margin-bottom: -2px
+                transition: 0.3s
+            &:nth-child(2)
+                rotate: -50deg
+                margin-top: -1px
+                transition: 0.3s
+            &:nth-child(3)
+                opacity: 0
+    .mobail-menu__shadow
+        display: none
+    .mobail-menu__shadow--active
+        display: block
+
+    .main__title
+        padding: 20px 27px 20px 20px
+        margin-right: 0
+        margin-bottom: 8px
+    .main__header
+        flex-direction: column
+    .title
+        font-size: 38px
+        &__img > img
+            width: 330px
+            display: block
+    .subtitle
+        display: flex
+        flex-wrap: wrap
+        text-wrap: nowrap
+        margin-top: 47px
+        &__text
+            font-size: 12px
+            &:first-child
+                margin-bottom: 10px
+    .about-us
+        margin: 80px 0
+        flex-direction: column-reverse
+        &__content
+            margin: 0
+            margin-bottom: 20px
+        &__title
+            margin-top: 10px
+            margin-bottom: 30px
+        &__subtitle
+            font-size: 14px
+        &__img
+            background-size: contain
+            flex: 0 0 303px
+            & img
+                padding: 0 0 8px 8px
+                width: 68px
+    .services
+        flex-wrap: wrap
+        margin-bottom: 80px
+        &__block-name
+            margin-bottom: 30px
+    .category__item
+        flex-direction: column-reverse
+        margin-bottom: 20px
+        width: 330px
+        &:nth-child(3) > .item__option > .option > .option__name
+            width: 82px
+    .item__option
+        margin-right: 0
+        margin-top: 8px
+    .item__info
+        padding: 0 20px
+        flex-wrap: wrap
+        justify-content: center
+    .item__img
+        margin-top: 13px
+        &> img
+            width: 219px
+    .item__title
+        font-size: 20px
+        padding-top: 20px
+        margin-bottom: 13px
+    .item__subtitle
+        font-size: 14px
+    .option
+        padding: 14px 0 0 20px
+        &:first-child
+            padding-top: 23px
+        &:last-child
+            padding-bottom: 23px
+        &__name
+            width: 63px
+        &__price
+            margin-right: 20px
+            font-size: 12px
+            padding: 14.5px 22.5px
+    .how-it-work
+        padding: 60px 0
+    .how-it-work__title
+        margin-top: 10px
+        margin-bottom: 30px
+    .step
+        flex-wrap: wrap
+        padding: 20px 16px 20px 20px
+        &:nth-child(odd)
+            padding: 20px 16px 20px 20px
+        &__name
+            font-size: 20px
+        &__more
+            margin-top: 20px
+            &> .info
+                margin-bottom: 20px
+                &:last-child
+                    margin-bottom: 0
+    .info
+        &__title
+            font-size: 12px
+        &__subtitle
+            padding: 0
+            font-size: 12px
+    .faqs
+        margin-top: 60px
+        margin-bottom: 80px
+        flex-wrap: wrap
+        &__item
+            font-size: 18px
+            padding-bottom: 15px
+            &:first-child
+                margin-top: 30px
+        &__item-subtitle
+            padding-right: 15px
+            font-size: 14px
+    .slider__nav
+        left: 69%
+        top: 3%
+        & button
+            width: 40px
+            height: 40px
+    .gallery > .block-title
+        margin-bottom: 30px
+        padding-top: 25px
+    .slider__nav > button:first-child
+        margin-right: 20px
+    .slide > div > img
+        width: 330px
+    .gallery
+        margin-bottom: 80px
+    .reviews
+        margin-bottom: 80px
+        &__header
+            flex-wrap: wrap
+            margin-bottom: 30px
+        &__img
+            margin-bottom: 20px
+            &> img
+                width: 225px
+        &__text-content
+            flex-wrap: wrap
+            row-gap: 20px
+    .review
+        margin: 0
+        padding: 20px
+        font-size: 14px
+    .blog
+        margin-bottom: 80px
+        &> .slider__nav
+            display: flex
+            top: 6%
+        & button:last-child
+            rotate: 180deg
+    .blog > .block-title
+        margin-top: 10px
+        width: 165px
+    .blog__link
+        width: 330px
+        & .text
+            display: -webkit-box
+            -webkit-line-clamp: 2
+            -webkit-box-orient: vertical
+            overflow: hidden
+            text-overflow: ellipsis
+    .link__text
+        font-size: 18px
+    .link__img
+        width: 330px
+        display: block
+    .contact-us__container
+        padding: 60px 30px
+    .contact-us__container > .block-title
+        margin-top: 10px
+    .form
+        margin-top: 30px
+        display: flex
+        flex-wrap: wrap
+        &__input
+            width: 252px
+            &:first-child
+                margin-right: 0 !important
+                margin-bottom: 10px
+        &__name-email
+            margin-bottom: 10px
+    .form__submit
+        flex-wrap: wrap
+    .submit
+        width: 270px
+        font-size: 12px
+        margin-bottom: 18px
+    .check
+        margin-left: 31px
+    .footer
+        padding-top: 60px
+        padding-bottom: 80px
+    .footer__logo > a > img
+        width: 80px
+    .footer__container
+        flex-direction: column
+    .footer__navigate
+        margin: 0
+        margin-top: 60px
+    .footer__navigate .navigate__leftside
+        margin-right: 80px
+    .footer__navigate > .navigate
+        flex-direction: row
+        margin-bottom: 50px
+    .footer__follow
+        margin: 0
+        margin-bottom: 50px
+        & > span
+            font-size: 20px
+    .follow__social
+        margin-top: 10px
+    .footer
+        &__form-title
+            font-size: 20px
+            margin-bottom: 10px
+    .footer__form > .form
+        margin-top: 30px
+        & .form__input
+            width: 252px
+        & .submit
+            width: 270px
+            margin: 0
+    .footer__form .form__policy
+        margin-top: 18px
+        padding-bottom: 5px

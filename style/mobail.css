@@ -1,0 +1,14 @@
+@media (min-width: 360px) and (max-width: 767px) {
+  .container {
+    width: 330px;
+  }
+  .header__navigate {
+    display: none;
+  }
+  .header__social {
+    display: none;
+  }
+  .header__logo > a > img {
+    width: 80px;
+  }
+}/*# sourceMappingURL=mobail.css.map */

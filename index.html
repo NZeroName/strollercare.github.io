@@ -10,7 +10,7 @@
     <header class="header">
       <div class="header__wrapper container">
         <div class="header__logo">
-          <a href="#main"><img src="img/logo.jpg" alt="Stoller Care" /></a>
+          <a href="#main"><img src="img/logo.png" alt="Stoller Care" /></a>
         </div>
         <div class="header__navigate">
           <ul class="navigate">
@@ -34,13 +34,10 @@
             ><img src="img/facebook.svg" alt="facebook"
           /></a>
         </div>
+        <div class="mobail-menu__shadow"></div>
         <div class="header__mobail-menu">
-          <div class="mobail-menu__toglebtn">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <div class="header__navigate mobail-menu">
+          <div class="header__mobail-menu-container">
+            <div class="header__navigate mobail-menu">
             <ul class="navigate">
               <li><a class="navigate__item" href="#about">About us</a></li>
               <li><a class="navigate__item" href="#services">Services</a></li>
@@ -54,13 +51,19 @@
               <li><a class="navigate__item" href="#contact">Contact Us</a></li>
             </ul>
           </div>
-          <div class="header__social mobail-menu__social">
+            <div class="header__social mobail-menu__social">
             <a href="" class="social__item"
               ><img src="img/instagram.svg" alt="instagram"
             /></a>
             <a href="" class="social__item"
               ><img src="img/facebook.svg" alt="facebook"
             /></a>
+          </div>
+          </div>
+          <div class="mobail-menu__toglebtn">
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
         </div>
       </div>
@@ -108,7 +111,7 @@
           </div>
         </section>
         <section class="services" id="services">
-          <div class="services__block-name">Services</div>
+          <div class="services__block-name block-title">Services</div>
           <div class="services__category">
             <div class="category__item">
               <div class="item__option">
@@ -470,6 +473,11 @@
         <section class="blog" id="blog">
           <span class="block-name">Blog </span>
           <h2 class="block-title">Tips and Insights</h2>
+          <div class="slider__nav">
+            <button id="blog-prev"><img src="img/arrow.svg" alt="" /></button
+            ><button id="blog-next"><img src="img/arrow.svg" alt="" /></button>
+          </div>
+          <div class="blog__container">
           <div class="blog__links">
             <a class="blog__link" href="">
               <div class="link">
@@ -513,6 +521,7 @@
                 </div>
               </div>
             </a>
+          </div>
           </div>
         </section>
       </div>

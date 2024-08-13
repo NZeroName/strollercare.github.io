@@ -66,11 +66,13 @@
     margin-bottom: 30px
     &:last-child
         margin-bottom: 0
+
 .item
     &__option
         margin-right: 10px
         background-color: $blueBg
         border-radius: 10px
+
     &__info
         background-color: $blue
         border-radius: 10px
@@ -98,6 +100,8 @@
     justify-content: space-between
     &:first-child
         padding-top: 50px
+    &:last-child
+        padding-bottom: 50px
     &__name
         font-size: 14px
         font-weight: 500
@@ -115,7 +119,6 @@
         text-wrap: nowrap
 
 .how-it-work
-    margin-top: 19px
     background-color: $blueBg
     padding: 150px 0
 
@@ -212,6 +215,7 @@
         overflow: hidden
         margin: auto
         position: relative
+        border-radius: 10px
 .slide
     display: flex
     min-width: 100%
@@ -274,6 +278,9 @@
         font-size: 16px
 .blog
     margin-bottom: 180px
+    position: relative
+    &>.slider__nav
+        display: none
     &>.block-title
         margin-top: 19px
     &__links
