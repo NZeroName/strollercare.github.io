@@ -140,7 +140,23 @@ function toggleMenu() {
   // при показе меню header__mobail-menu--active
   // подложка серая mobail-menu__shadow
 }
-
+function showFaq (){
+  let faqItem = document.querySelectorAll('.faqs__item')
+  faqItem.forEach((faq) => {
+    faq.addEventListener('click', function (e) {
+      let togglebtn = this.querySelector('.faqs__toggle-vision')
+      let subtitle = this.querySelector('.faqs__item-subtitle')
+      togglebtn.classList.toggle('show')
+      if(togglebtn.classList.contains('show')) {
+        togglebtn.querySelector('img').src = 'img/hide.svg'
+        subtitle.style.display = 'block'
+      } else {subtitle.style.display = 'none'
+        togglebtn.querySelector('img').src = 'img/show.svg'
+      }
+      
+    })
+  })
+}
 
 document.addEventListener("DOMContentLoaded", function () {
   // Находим все ссылки, которые начинаются с "#", т.е. якорные ссылки
@@ -225,5 +241,5 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   // Запуск слайдеров
 gallerySlider();
-
+showFaq()
 });

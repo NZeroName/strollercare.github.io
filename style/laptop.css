@@ -83,6 +83,9 @@
   .faqs {
     margin: 100px 0;
   }
+  .faqs__item {
+    font-size: 20px;
+  }
   .gallery {
     margin-bottom: 110px;
   }

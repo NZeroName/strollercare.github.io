@@ -178,6 +178,7 @@
         margin-right: 256px
     &__item
         display: flex
+        flex-wrap: wrap
         justify-content: space-between
         align-items: flex-start
         padding-bottom: 30px
@@ -187,22 +188,26 @@
         font-size: 22px
         line-height: 140%
         color: $dark
+        cursor: pointer
         &:first-child
             margin-top: 19px
         & h3
             font-weight: 500
+    &__item-title
+        display: flex
+        align-items: flex-start
     &__item-subtitle
         font-size: 18px
         font-weight: 400
         padding-top: 30px
-        padding-right: 94px
+        padding-right: 134px
+        flex-basis: 100%
+        cursor: auto
+        display: none
     &__toggle-vision
         border: none
         background-color: transparent
-        color: $blue
-        font-size: 30px
         cursor: pointer
-        line-height: 110%
 .gallery
     position: relative
     overflow: hidden
