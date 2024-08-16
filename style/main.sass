@@ -196,6 +196,8 @@
     &__item-title
         display: flex
         align-items: flex-start
+        width: 100%
+        justify-content: space-between
     &__item-subtitle
         font-size: 18px
         font-weight: 400
@@ -238,7 +240,7 @@
         position: absolute
         top: 0
         width: 100%
-        left: 87%
+        justify-content: flex-end
         display: flex
         &>button
             background-color: $blue
@@ -365,6 +367,8 @@
     width: 100%
     padding-top: 90px
     padding-bottom: 150px
+    &__logo > a > img
+        width: 119px
     &__container
         display: flex
     &__navigate
@@ -379,7 +383,7 @@
         & .navigate__leftside
             margin-right: 171px
     &__follow
-        margin-right: 268px
+        margin-right: 200px
         text-wrap: nowrap
         &>span
             color: #FFFFFF

@@ -356,6 +356,8 @@ table {
 .faqs__item-title {
   display: flex;
   align-items: flex-start;
+  width: 100%;
+  justify-content: space-between;
 }
 .faqs__item-subtitle {
   font-size: 18px;
@@ -410,7 +412,7 @@ table {
   position: absolute;
   top: 0;
   width: 100%;
-  left: 87%;
+  justify-content: flex-end;
   display: flex;
 }
 .slider__nav > button {
@@ -581,6 +583,9 @@ table {
   padding-top: 90px;
   padding-bottom: 150px;
 }
+.footer__logo > a > img {
+  width: 119px;
+}
 .footer__container {
   display: flex;
 }
@@ -600,7 +605,7 @@ table {
   margin-right: 171px;
 }
 .footer__follow {
-  margin-right: 268px;
+  margin-right: 200px;
   text-wrap: nowrap;
 }
 .footer__follow > span {
@@ -819,9 +824,6 @@ table {
   .slide > div > img {
     width: 540px;
   }
-  .slider__nav {
-    left: 85%;
-  }
   .slider__nav > button {
     width: 60px;
     height: 60px;
@@ -872,6 +874,9 @@ table {
   .footer {
     padding-bottom: 85px;
   }
+  .footer__logo > a > img {
+    width: 95px;
+  }
   .footer__navigate {
     margin-left: 97px;
     margin-right: 100px;
@@ -901,7 +906,7 @@ table {
     margin-top: 20px;
   }
 }
-@media (min-width: 768px) and (max-width: 1199px) {
+@media (min-width: 769px) and (max-width: 1199px) {
   .container {
     width: 690px;
   }
@@ -1194,7 +1199,6 @@ table {
     width: 690px;
   }
   .slider__nav {
-    left: 85%;
     top: 5%;
   }
   .slider__nav > button {
@@ -1292,6 +1296,9 @@ table {
     padding-top: 70px;
     padding-bottom: 67px;
   }
+  .footer__logo > a > img {
+    width: 95px;
+  }
   .footer__container {
     flex-wrap: wrap;
     justify-content: center;
@@ -1329,9 +1336,9 @@ table {
     margin-top: 17px;
   }
 }
-@media (min-width: 360px) and (max-width: 767px) {
+@media (min-width: 360px) and (max-width: 768px) {
   .container {
-    width: 330px;
+    width: 95vw;
   }
   .block-title {
     font-size: 28px;
@@ -1456,7 +1463,7 @@ table {
     font-size: 38px;
   }
   .title__img > img {
-    width: 330px;
+    width: 100%;
     display: block;
   }
   .subtitle {
@@ -1464,12 +1471,10 @@ table {
     flex-wrap: wrap;
     text-wrap: nowrap;
     margin-top: 47px;
+    gap: 10px;
   }
   .subtitle__text {
     font-size: 12px;
-  }
-  .subtitle__text:first-child {
-    margin-bottom: 10px;
   }
   .about-us {
     margin: 80px 0;
@@ -1487,12 +1492,15 @@ table {
     font-size: 14px;
   }
   .about-us__img {
-    background-size: contain;
-    flex: 0 0 303px;
+    background-size: cover;
+    flex: 0 0 90vw;
   }
   .about-us__img img {
     padding: 0 0 8px 8px;
     width: 68px;
+  }
+  .item__text-content {
+    padding-bottom: 20px;
   }
   .services {
     flex-wrap: wrap;
@@ -1504,7 +1512,7 @@ table {
   .category__item {
     flex-direction: column-reverse;
     margin-bottom: 20px;
-    width: 330px;
+    width: 100%;
   }
   .category__item:nth-child(3) > .item__option > .option > .option__name {
     width: 82px;
@@ -1599,7 +1607,6 @@ table {
     font-size: 14px;
   }
   .slider__nav {
-    left: 69%;
     top: 3%;
   }
   .slider__nav button {
@@ -1614,7 +1621,7 @@ table {
     margin-right: 20px;
   }
   .slide > div > img {
-    width: 330px;
+    width: 95vw;
   }
   .gallery {
     margin-bottom: 80px;
@@ -1752,6 +1759,17 @@ table {
   .footer__form .form__policy {
     margin-top: 18px;
     padding-bottom: 5px;
+  }
+}
+@media (min-width: 580px) and (max-width: 768px) {
+  .item__info {
+    flex-wrap: nowrap;
+  }
+  .item__text-content {
+    padding-bottom: 20px;
+  }
+  .item__img {
+    display: flex;
   }
 }
 html {

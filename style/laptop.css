@@ -92,9 +92,6 @@
   .slide > div > img {
     width: 540px;
   }
-  .slider__nav {
-    left: 85%;
-  }
   .slider__nav > button {
     width: 60px;
     height: 60px;
@@ -144,6 +141,9 @@
   }
   .footer {
     padding-bottom: 85px;
+  }
+  .footer__logo > a > img {
+    width: 95px;
   }
   .footer__navigate {
     margin-left: 97px;

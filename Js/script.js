@@ -122,24 +122,27 @@ function blogSlider() {
     });
   }
 }
-
-function toggleMenu() {
-  let menubtn = document.querySelector('.mobail-menu__toglebtn')
-  let mobileNavigate = document.querySelector('.header__mobail-menu-container')
-  let shadow = document.querySelector('.mobail-menu__shadow')
-  menubtn.addEventListener('click', (e) => {
-    e.stopPropagation
-    menubtn.classList.toggle('toglebtn-active')
-    mobileNavigate.classList.toggle('header__mobail-menu--active')
-    shadow.classList.toggle('mobail-menu__shadow--active')
-    if(shadow.classList.contains('mobail-menu__shadow--active')){
+  function toggleMenu() {
+      let menubtn = document.querySelector('.mobail-menu__toglebtn')
+      let mobileNavigate = document.querySelector('.header__mobail-menu-container')
+      let shadow = document.querySelector('.mobail-menu__shadow')
+    
+    if(!shadow.classList.contains('mobail-menu__shadow--active')){
+      menubtn.classList.toggle('toglebtn-active')
+      mobileNavigate.classList.toggle('header__mobail-menu--active')
+      shadow.classList.toggle('mobail-menu__shadow--active')
       document.querySelector('body').style.overflow = 'hidden'
-    } else document.querySelector('body').style.overflow = 'auto'
-  })
+    } else {document.querySelector('body').style.overflow = 'auto'
+      menubtn.classList.toggle('toglebtn-active')
+      mobileNavigate.classList.toggle('header__mobail-menu--active')
+      shadow.classList.toggle('mobail-menu__shadow--active')}
+  }
+
+  
   // для активной кнопки toglebtn-active
   // при показе меню header__mobail-menu--active
   // подложка серая mobail-menu__shadow
-}
+
 function showFaq (){
   let faqItem = document.querySelectorAll('.faqs__item')
   faqItem.forEach((faq) => {
@@ -157,7 +160,14 @@ function showFaq (){
     })
   })
 }
-
+function hideMobailMenu() {
+  let menu = document.querySelector('.mobail-menu').querySelector('.navigate').querySelectorAll('li')
+  menu.forEach((link) => {
+    link.addEventListener('click', function (e) {
+      toggleMenu()
+    })
+  })
+}
 document.addEventListener("DOMContentLoaded", function () {
   // Находим все ссылки, которые начинаются с "#", т.е. якорные ссылки
   const links = document.querySelectorAll('a[href^="#"]');
@@ -183,7 +193,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
-
+document.querySelector('.mobail-menu__toglebtn').addEventListener('click', toggleMenu)
   // Функция плавного скролла к указанной позиции
   function smoothScrollTo(targetY, duration) {
     const startY = window.pageYOffset; // Начальная позиция скролла
@@ -237,9 +247,9 @@ document.addEventListener("DOMContentLoaded", function () {
     );
     document.querySelector('.contact-us__container').style.backgroundImage = 'url(../img/form-tablet.png)'
     blogSlider()
-    toggleMenu()
   }
   // Запуск слайдеров
 gallerySlider();
 showFaq()
+hideMobailMenu()
 });

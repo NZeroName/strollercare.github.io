@@ -1,6 +1,6 @@
-@media (min-width: 360px) and (max-width: 767px)
+@media (min-width: 360px) and (max-width: 768px)
     .container
-        width: 330px
+        width: 95vw
     .block-title
         font-size: 28px
     .block-name
@@ -100,17 +100,17 @@
     .title
         font-size: 38px
         &__img > img
-            width: 330px
+            width: 100%
             display: block
     .subtitle
         display: flex
         flex-wrap: wrap
         text-wrap: nowrap
         margin-top: 47px
+        gap: 10px
         &__text
             font-size: 12px
-            &:first-child
-                margin-bottom: 10px
+
     .about-us
         margin: 80px 0
         flex-direction: column-reverse
@@ -123,11 +123,13 @@
         &__subtitle
             font-size: 14px
         &__img
-            background-size: contain
-            flex: 0 0 303px
+            background-size: cover
+            flex: 0 0 90vw
             & img
                 padding: 0 0 8px 8px
                 width: 68px
+    .item__text-content
+        padding-bottom: 20px
     .services
         flex-wrap: wrap
         margin-bottom: 80px
@@ -136,7 +138,7 @@
     .category__item
         flex-direction: column-reverse
         margin-bottom: 20px
-        width: 330px
+        width: 100%
         &:nth-child(3) > .item__option > .option > .option__name
             width: 82px
     .item__option
@@ -205,7 +207,6 @@
             padding-right: 45px
             font-size: 14px
     .slider__nav
-        left: 69%
         top: 3%
         & button
             width: 40px
@@ -216,7 +217,7 @@
     .slider__nav > button:first-child
         margin-right: 20px
     .slide > div > img
-        width: 330px
+        width: 95vw
     .gallery
         margin-bottom: 80px
     .reviews
@@ -317,3 +318,11 @@
     .footer__form .form__policy
         margin-top: 18px
         padding-bottom: 5px
+
+@media (min-width: 580px) and (max-width: 768px)
+    .item__info
+        flex-wrap: nowrap
+    .item__text-content
+        padding-bottom: 20px
+    .item__img
+        display: flex
