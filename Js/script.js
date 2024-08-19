@@ -11,15 +11,15 @@ function initSlider({ sliderSelector, slideSelector, prevBtnSelector, nextBtnSel
     let endX = 0; // Конечная позиция касания
     const slideWidth = 100 / slidesPerView; // Ширина одного слайда в процентах
 
-    // Клонирование первых слайдов, если это необходимо для непрерывного скроллинга
+    // Клонирование первых слайдов
     if (cloneSlides) {
         for (let i = 0; i < slidesPerView; i++) {
-            const clonedSlide = slides[i].cloneNode(true); // Клонируем слайд
-            slider.appendChild(clonedSlide); // Добавляем клон в конец слайдера
+            const clonedSlide = slides[i].cloneNode(true);
+            slider.appendChild(clonedSlide);
         }
         for (let i = totalSlides - slidesPerView; i < totalSlides; i++) {
-            const clonedSlide = slides[i].cloneNode(true); // Клонируем слайд
-            slider.insertBefore(clonedSlide, slider.firstChild); // Добавляем клон в начало слайдера
+            const clonedSlide = slides[i].cloneNode(true);
+            slider.insertBefore(clonedSlide, slider.firstChild)
         }
         index = slidesPerView; // Начальная установка индекса
         slider.style.transform = `translateX(${-index * slideWidth}%)`;
@@ -70,11 +70,11 @@ function initSlider({ sliderSelector, slideSelector, prevBtnSelector, nextBtnSel
     function handleTouchEnd() {
         const deltaX = startX - endX;
         // Если свайп влево, переключаем на следующий слайд
-        if (deltaX > 50) {
+        if (deltaX > 20) {
             nextSlide();
         }
         // Если свайп вправо, переключаем на предыдущий слайд
-        if (deltaX < -50) {
+        if (deltaX < -20) {
             prevSlide();
         }
     }

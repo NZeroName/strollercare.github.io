@@ -359,7 +359,7 @@ table {
 }
 .faqs__item-title {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
   justify-content: space-between;
 }
@@ -1628,6 +1628,7 @@ table {
   }
   .faqs__item {
     font-size: 18px;
+    margin-top: 15px;
     padding-bottom: 15px;
   }
   .faqs__item:first-child {
@@ -1704,11 +1705,13 @@ table {
   }
   .blog__links {
     justify-content: unset;
+    margin-left: -7px;
   }
   .blog__link {
     display: flex;
-    min-width: 100%;
+    flex: 0 0 100%;
     box-sizing: border-box;
+    padding: 0 7px;
   }
   .blog__link .text {
     display: -webkit-box;
@@ -1717,11 +1720,15 @@ table {
     overflow: hidden;
     text-overflow: ellipsis;
   }
+  .link__dot {
+    margin-right: 10px;
+    margin-left: 5px;
+  }
   .link__text {
     font-size: 18px;
   }
   .link__img {
-    width: 95vw;
+    width: 94vw;
     display: block;
   }
   .contact-us__container {
