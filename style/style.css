@@ -1686,6 +1686,7 @@ table {
     margin: 0;
     padding: 20px;
     font-size: 14px;
+    width: 100%;
   }
   .blog {
     margin-bottom: 80px;
@@ -1702,7 +1703,9 @@ table {
     width: 165px;
   }
   .blog__link {
-    width: 100%;
+    display: flex;
+    min-width: 100%;
+    box-sizing: border-box;
   }
   .blog__link .text {
     display: -webkit-box;
