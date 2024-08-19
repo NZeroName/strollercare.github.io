@@ -70,11 +70,11 @@ function initSlider({ sliderSelector, slideSelector, prevBtnSelector, nextBtnSel
     function handleTouchEnd() {
         const deltaX = startX - endX;
         // Если свайп влево, переключаем на следующий слайд
-        if (deltaX > 20) {
+        if (deltaX > 100) {
             nextSlide();
         }
         // Если свайп вправо, переключаем на предыдущий слайд
-        if (deltaX < -20) {
+        if (deltaX < -100) {
             prevSlide();
         }
     }

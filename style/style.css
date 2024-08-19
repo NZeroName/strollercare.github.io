@@ -1705,7 +1705,7 @@ table {
   }
   .blog__links {
     justify-content: unset;
-    margin-left: -7px;
+    margin-left: -5px;
   }
   .blog__link {
     display: flex;
@@ -1728,7 +1728,7 @@ table {
     font-size: 18px;
   }
   .link__img {
-    width: 94vw;
+    width: 93vw;
     display: block;
   }
   .contact-us__container {
