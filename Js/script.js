@@ -84,9 +84,9 @@ function initSlider({ sliderSelector, slideSelector, prevBtnSelector, nextBtnSel
     prevBtn.addEventListener("click", prevSlide);
 
     // Добавляем обработчики событий для сенсорных событий
-    slider.addEventListener("touchstart", handleTouchStart, false);
-    slider.addEventListener("touchmove", handleTouchMove, false);
-    slider.addEventListener("touchend", handleTouchEnd, false);
+    slider.addEventListener("touchstart", handleTouchStart, {passive: false});
+    slider.addEventListener("touchmove", handleTouchMove, {passive: false});
+    slider.addEventListener("touchend", handleTouchEnd, {passive: false});
 }
 
 
@@ -104,8 +104,8 @@ function gallerySlider() {
 function blogSlider() {
     if(window.innerWidth >= 360 && window.innerWidth <= 768){
       initSlider({
-        sliderSelector: '.blog__links',
-        slideSelector: '.blog__link',
+        sliderSelector: '.blog__container .blog__links',
+        slideSelector: '.blog__container .blog__link',
         prevBtnSelector: 'blog-prev',
         nextBtnSelector: 'blog-next',
         slidesPerView: 1, 

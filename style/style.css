@@ -479,6 +479,13 @@ table {
   margin-bottom: 180px;
   position: relative;
 }
+.blog__container {
+  width: 100%;
+  overflow: hidden;
+  margin: auto;
+  position: relative;
+  border-radius: 10px;
+}
 .blog > .slider__nav {
   display: none;
 }
