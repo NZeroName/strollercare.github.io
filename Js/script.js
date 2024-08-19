@@ -89,7 +89,7 @@ function initSlider({ sliderSelector, slideSelector, prevBtnSelector, nextBtnSel
     slider.addEventListener("touchend", handleTouchEnd, false);
 }
 
-// Инициализация галереи с одним слайдом на экране
+
 function gallerySlider() {
     initSlider({
         sliderSelector: '.gallery__slider .slider',
@@ -97,11 +97,10 @@ function gallerySlider() {
         prevBtnSelector: 'prev',
         nextBtnSelector: 'next',
         slidesPerView: 1,// Количество слайдов, отображаемых одновременно
-        cloneSlides: true 
+        cloneSlides: true // Клонирование слайдов
     });
 }
 
-// Инициализация блога с двумя слайдами на экране
 function blogSlider() {
     if(window.innerWidth >= 360 && window.innerWidth <= 768){
       initSlider({
@@ -109,16 +108,16 @@ function blogSlider() {
         slideSelector: '.blog__link',
         prevBtnSelector: 'blog-prev',
         nextBtnSelector: 'blog-next',
-        slidesPerView: 1, // Количество слайдов, отображаемых одновременно
-        cloneSlides: true // Клонирование слайдов для непрерывного скроллинга
+        slidesPerView: 1, 
+        cloneSlides: true 
     })} else {
     initSlider({
         sliderSelector: '.blog__links',
         slideSelector: '.blog__link',
         prevBtnSelector: 'blog-prev',
         nextBtnSelector: 'blog-next',
-        slidesPerView: 2, // Количество слайдов, отображаемых одновременно
-        cloneSlides: true // Клонирование слайдов для непрерывного скроллинга
+        slidesPerView: 2, 
+        cloneSlides: true 
     });
   }
 }
