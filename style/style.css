@@ -126,6 +126,10 @@ table {
   margin-right: 10px;
 }
 
+.title__img > img {
+  border-radius: 10px;
+}
+
 .title {
   font-size: 80px;
   font-weight: 600;
@@ -517,8 +521,7 @@ table {
   padding-top: 150px;
   padding-bottom: 150px;
   padding-left: 405px;
-  background-color: #3D8BFC;
-  background-image: url("../img/bg-contactUs.png");
+  background: url(../img/bg-contactUs1.svg) 0% 100% no-repeat, url(../img/bg-contactUs2.svg) 100% 0%, #3D8BFC;
   background-repeat: no-repeat;
   border-radius: 10px;
   position: relative;
@@ -533,7 +536,7 @@ table {
 .contact-us__dark-block {
   position: absolute;
   background-color: #1E212C;
-  bottom: 0;
+  bottom: -1px;
   height: 308px;
   width: 100%;
   z-index: -1;
@@ -547,8 +550,9 @@ table {
   border-radius: 100px;
   padding: 16px 0 16px 16px;
   background-color: transparent;
-  width: 359px;
+  width: 375px;
   color: rgba(255, 255, 255, 0.6);
+  box-sizing: border-box;
 }
 .form__input:focus {
   outline: none;
@@ -561,12 +565,14 @@ table {
 }
 .form__name-email {
   margin-bottom: 15px;
+  display: flex;
 }
 .form__name-email > input:first-child {
   margin-right: 15px;
 }
 .form__tel-message {
   margin-bottom: 15px;
+  display: flex;
 }
 .form__tel-message > input:first-child {
   margin-right: 15px;
@@ -626,11 +632,9 @@ table {
 }
 .footer__form > .form {
   margin-top: 27px;
-  display: block;
 }
 .footer__form .submit {
   margin-top: 15px;
-  width: 375px;
   padding: 19px;
 }
 .footer__form .form__policy {
@@ -735,8 +739,18 @@ table {
     width: 1110px;
     overflow: hidden;
   }
+  .main {
+    margin-top: 110px;
+  }
   .title {
     font-size: 50px;
+  }
+  .header {
+    padding-top: 18px;
+    padding-bottom: 37px;
+  }
+  .header__logo > a > img {
+    width: 95px;
   }
   .main__title {
     padding: 40px 130px 0 25px;
@@ -852,8 +866,8 @@ table {
     text-overflow: ellipsis;
   }
   .contact-us__container {
-    background-size: cover;
     padding: 90px 0 0 335px;
+    background-size: 312px 337px, 197px 197px;
   }
   .contact-us__container > .block-title {
     margin-top: 10px;
@@ -862,11 +876,11 @@ table {
     padding-bottom: 90px;
   }
   .form__input {
-    width: 275px;
+    width: 285px;
   }
   .submit {
     font-size: 14px;
-    width: 290px;
+    width: 285px;
   }
   .contact-us__dark-block {
     height: 250px;
@@ -879,22 +893,25 @@ table {
   }
   .footer__navigate {
     margin-left: 97px;
-    margin-right: 100px;
+    margin-right: 80px;
   }
   .footer__navigate .navigate__leftside {
-    margin-right: 89px;
+    margin-right: 69px;
   }
   .footer__follow {
-    margin-right: 145px;
+    margin-right: 169px;
   }
   .footer__form-title {
     font-size: 22px;
   }
+  .footer__form {
+    margin-top: 10px;
+  }
   .footer__form .form__input {
-    width: 220px;
+    width: 255px;
   }
   .footer__form .submit {
-    width: 242px;
+    width: 255px;
   }
   .footer__form-subtitle {
     line-height: 140%;
@@ -904,6 +921,9 @@ table {
   }
   .footer__form > .form {
     margin-top: 20px;
+  }
+  .footer__follow {
+    margin-top: 10px;
   }
 }
 @media (min-width: 769px) and (max-width: 1199px) {
@@ -1271,6 +1291,7 @@ table {
     padding: 0;
   }
   .contact-us__container {
+    background-size: 82px 127px, 137px 127px;
     padding: 70px 50px;
   }
   .contact-us__container > .block-title {
@@ -1282,10 +1303,10 @@ table {
     margin-top: 30px;
   }
   .form__input {
-    width: 254px;
+    width: 287px;
   }
   .submit {
-    width: 272px;
+    width: 287px;
     font-size: 14px;
   }
   .contact-us__dark-block {
@@ -1326,11 +1347,14 @@ table {
     flex-direction: column;
     padding-bottom: 5px;
   }
+  .footer__form .form__input {
+    width: 255px;
+  }
   .footer__form-title {
     font-size: 22px;
   }
   .footer__form .submit {
-    width: 272px;
+    width: 255px;
   }
   .footer__form .form__policy {
     margin-top: 17px;
@@ -1602,16 +1626,24 @@ table {
   .faqs__item:first-child {
     margin-top: 30px;
   }
+  .faqs__item h3 {
+    margin-right: 15px;
+  }
   .faqs__item-subtitle {
     padding-right: 45px;
+    padding-top: 20px;
     font-size: 14px;
   }
   .slider__nav {
-    top: 3%;
+    top: 6%;
   }
   .slider__nav button {
     width: 40px;
     height: 40px;
+  }
+  .slider__nav button img {
+    width: 12px;
+    height: 12px;
   }
   .gallery > .block-title {
     margin-bottom: 30px;
@@ -1663,7 +1695,7 @@ table {
     width: 165px;
   }
   .blog__link {
-    width: 330px;
+    width: 100%;
   }
   .blog__link .text {
     display: -webkit-box;
@@ -1676,10 +1708,12 @@ table {
     font-size: 18px;
   }
   .link__img {
-    width: 330px;
+    width: 95vw;
     display: block;
   }
   .contact-us__container {
+    background-size: 82px 129px, 140px 120px;
+    background-position: 0% 100%, 100% 0%;
     padding: 60px 30px;
   }
   .contact-us__container > .block-title {
@@ -1687,24 +1721,33 @@ table {
   }
   .form {
     margin-top: 30px;
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .form__input {
-    width: 252px;
-  }
-  .form__input:first-child {
-    margin-right: 0 !important;
-    margin-bottom: 10px;
   }
   .form__name-email {
+    flex-wrap: wrap;
     margin-bottom: 10px;
+  }
+  .form__name-email > input {
+    width: 100%;
+  }
+  .form__name-email > input:first-child {
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+  .form__tel-message {
+    flex-wrap: wrap;
+  }
+  .form__tel-message > input {
+    width: 100%;
+  }
+  .form__tel-message > input:first-child {
+    margin-bottom: 10px;
+    margin-right: 0;
   }
   .form__submit {
     flex-wrap: wrap;
   }
   .submit {
-    width: 270px;
+    width: 100%;
     font-size: 12px;
     margin-bottom: 18px;
   }
@@ -1747,13 +1790,16 @@ table {
     margin-bottom: 10px;
   }
   .footer__form > .form {
+    display: flex;
+    flex-direction: column;
     margin-top: 30px;
   }
   .footer__form > .form .form__input {
-    width: 252px;
+    margin-bottom: 10px;
+    width: 255px;
   }
   .footer__form > .form .submit {
-    width: 270px;
+    width: 255px;
     margin: 0;
   }
   .footer__form .form__policy {
@@ -1770,6 +1816,30 @@ table {
   }
   .item__img {
     display: flex;
+  }
+  .form__name-email, .form__tel-message {
+    flex-wrap: nowrap;
+    -moz-column-gap: 15px;
+         column-gap: 15px;
+  }
+  .form__name-email > input, .form__tel-message > input {
+    width: 100%;
+  }
+  .form__name-email > input:first-child, .form__tel-message > input:first-child {
+    margin-bottom: 0;
+  }
+  .form__submit {
+    flex-wrap: nowrap;
+  }
+  .form__submit .submit {
+    width: 49%;
+    margin: 0;
+  }
+  .check {
+    margin-left: 41px;
+  }
+  .check__box {
+    margin-left: -26px;
   }
 }
 html {

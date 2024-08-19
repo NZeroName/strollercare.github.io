@@ -3,8 +3,18 @@
     width: 1110px;
     overflow: hidden;
   }
+  .main {
+    margin-top: 110px;
+  }
   .title {
     font-size: 50px;
+  }
+  .header {
+    padding-top: 18px;
+    padding-bottom: 37px;
+  }
+  .header__logo > a > img {
+    width: 95px;
   }
   .main__title {
     padding: 40px 130px 0 25px;
@@ -120,8 +130,8 @@
     text-overflow: ellipsis;
   }
   .contact-us__container {
-    background-size: cover;
     padding: 90px 0 0 335px;
+    background-size: 312px 337px, 197px 197px;
   }
   .contact-us__container > .block-title {
     margin-top: 10px;
@@ -130,11 +140,11 @@
     padding-bottom: 90px;
   }
   .form__input {
-    width: 275px;
+    width: 285px;
   }
   .submit {
     font-size: 14px;
-    width: 290px;
+    width: 285px;
   }
   .contact-us__dark-block {
     height: 250px;
@@ -147,22 +157,25 @@
   }
   .footer__navigate {
     margin-left: 97px;
-    margin-right: 100px;
+    margin-right: 80px;
   }
   .footer__navigate .navigate__leftside {
-    margin-right: 89px;
+    margin-right: 69px;
   }
   .footer__follow {
-    margin-right: 145px;
+    margin-right: 169px;
   }
   .footer__form-title {
     font-size: 22px;
   }
+  .footer__form {
+    margin-top: 10px;
+  }
   .footer__form .form__input {
-    width: 220px;
+    width: 255px;
   }
   .footer__form .submit {
-    width: 242px;
+    width: 255px;
   }
   .footer__form-subtitle {
     line-height: 140%;
@@ -172,5 +185,8 @@
   }
   .footer__form > .form {
     margin-top: 20px;
+  }
+  .footer__follow {
+    margin-top: 10px;
   }
 }/*# sourceMappingURL=laptop.css.map */

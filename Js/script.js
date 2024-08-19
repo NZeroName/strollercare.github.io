@@ -245,7 +245,6 @@ document.querySelector('.mobail-menu__toglebtn').addEventListener('click', toggl
               </div>
             </div>`
     );
-    document.querySelector('.contact-us__container').style.backgroundImage = 'url(../img/form-tablet.png)'
     blogSlider()
   }
   // Запуск слайдеров

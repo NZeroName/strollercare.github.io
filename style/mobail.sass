@@ -203,14 +203,20 @@
             padding-bottom: 15px
             &:first-child
                 margin-top: 30px
+            & h3
+                margin-right: 15px
         &__item-subtitle
             padding-right: 45px
+            padding-top: 20px
             font-size: 14px
     .slider__nav
-        top: 3%
+        top: 6%
         & button
             width: 40px
             height: 40px
+            & img
+                width: 12px
+                height: 12px
     .gallery > .block-title
         margin-bottom: 30px
         padding-top: 25px
@@ -247,7 +253,7 @@
         margin-top: 10px
         width: 165px
     .blog__link
-        width: 330px
+        width: 100%
         & .text
             display: -webkit-box
             -webkit-line-clamp: 2
@@ -257,27 +263,35 @@
     .link__text
         font-size: 18px
     .link__img
-        width: 330px
+        width: 95vw
         display: block
     .contact-us__container
+        background-size: 82px 129px, 140px 120px
+        background-position: 0% 100%, 100% 0%
         padding: 60px 30px
     .contact-us__container > .block-title
         margin-top: 10px
     .form
         margin-top: 30px
-        display: flex
-        flex-wrap: wrap
-        &__input
-            width: 252px
-            &:first-child
-                margin-right: 0 !important
-                margin-bottom: 10px
         &__name-email
+            flex-wrap: wrap
             margin-bottom: 10px
+            & > input
+                width: 100%
+                &:first-child
+                    margin-bottom: 10px
+                    margin-right: 0
+        &__tel-message
+            flex-wrap: wrap
+            & > input
+                width: 100%
+                &:first-child
+                    margin-bottom: 10px
+                    margin-right: 0
     .form__submit
         flex-wrap: wrap
     .submit
-        width: 270px
+        width: 100%
         font-size: 12px
         margin-bottom: 18px
     .check
@@ -309,11 +323,14 @@
             font-size: 20px
             margin-bottom: 10px
     .footer__form > .form
+        display: flex
+        flex-direction: column
         margin-top: 30px
         & .form__input
-            width: 252px
+            margin-bottom: 10px
+            width: 255px
         & .submit
-            width: 270px
+            width: 255px
             margin: 0
     .footer__form .form__policy
         margin-top: 18px
@@ -326,3 +343,19 @@
         padding-bottom: 20px
     .item__img
         display: flex
+    .form__name-email, .form__tel-message
+        flex-wrap: nowrap
+        column-gap: 15px
+        & > input
+            width: 100%
+            &:first-child
+                margin-bottom: 0
+    .form__submit
+        flex-wrap: nowrap
+        & .submit
+            width: 49%
+            margin: 0
+    .check
+        margin-left: 41px
+        &__box
+            margin-left: -26px
