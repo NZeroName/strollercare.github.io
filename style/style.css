@@ -409,9 +409,10 @@ table {
 }
 
 .slider {
-  touch-action: pan-y;
+  touch-action: pan-x;
   display: flex;
   transition: transform 0.5s ease-in-out;
+  z-index: 100;
 }
 .slider__nav {
   position: absolute;

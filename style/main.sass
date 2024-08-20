@@ -235,11 +235,10 @@
         display: block
 
 .slider
-    touch-action: pan-y
+    touch-action: pan-x
     display: flex
     transition: transform 0.5s ease-in-out
-    -webkit-overflow-scrolling: touch
-    overflow: hidden
+    z-index: 100
     &__nav
         position: absolute
         top: 0

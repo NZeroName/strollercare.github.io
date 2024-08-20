@@ -97,9 +97,18 @@ function initSlider({ sliderSelector, slideSelector, prevBtnSelector, nextBtnSel
     prevBtn.addEventListener("click", prevSlide);
 
     // Добавляем обработчики событий для сенсорных событий
-    slider.addEventListener("touchstart", handleTouchStart, {passive: false});
-    slider.addEventListener("touchmove", handleTouchMove, {passive: false});
-    slider.addEventListener("touchend", handleTouchEnd);
+    // slider.addEventListener("touchstart", handleTouchStart, {passive: false});
+    slider.addEventListener("touchstart", () => {
+      alert('Тронул')
+    })
+    slider.addEventListener("touchmove", () => {
+      alert('Двинул')
+    })
+    slider.addEventListener("touchend", () => {
+      alert('убрал')
+    })
+    // slider.addEventListener("touchmove", handleTouchMove, {passive: false});
+    // slider.addEventListener("touchend", handleTouchEnd);
 }
 
 
