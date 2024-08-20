@@ -71,8 +71,9 @@ function initSlider({ sliderSelector, slideSelector, prevBtnSelector, nextBtnSel
     const deltaY = Math.abs(event.touches[0].clientY - startY);
         endX = event.touches[0].clientX; // Обновляем конечную позицию касания
          if (deltaX > deltaY) {
+          event.preventDefault(); // Блокируем вертикальную прокрутку
         horizontalSwipe = true;
-        event.preventDefault(); // Блокируем вертикальную прокрутку
+        
     }
     
     if (horizontalSwipe) {
@@ -88,13 +89,13 @@ function initSlider({ sliderSelector, slideSelector, prevBtnSelector, nextBtnSel
         const deltaX = startX - endX;
         // Если свайп влево, переключаем на следующий слайд
         if (deltaX > 60) {
-          alert(`${deltaX} влево`)
+          
             nextSlide();
         }
         // Если свайп вправо, переключаем на предыдущий слайд
         if (deltaX < -60) {
             prevSlide();
-            alert(`${deltaX} вправо`)
+            
         }
     }
 
@@ -103,7 +104,7 @@ function initSlider({ sliderSelector, slideSelector, prevBtnSelector, nextBtnSel
     prevBtn.addEventListener("click", prevSlide);
 
     // Добавляем обработчики событий для сенсорных событий
-    slider.addEventListener("touchstart", handleTouchStart);
+    slider.addEventListener("touchstart", handleTouchStart, {passive: false});
     slider.addEventListener("touchmove", handleTouchMove, {passive: false});
     slider.addEventListener("touchend", handleTouchEnd);
 }
