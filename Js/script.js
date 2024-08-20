@@ -104,7 +104,7 @@ function initSlider({ sliderSelector, slideSelector, prevBtnSelector, nextBtnSel
 
     // Добавляем обработчики событий для сенсорных событий
     slider.addEventListener("touchstart", handleTouchStart);
-    slider.addEventListener("touchmove", handleTouchMove);
+    slider.addEventListener("touchmove", handleTouchMove, {passive: false});
     slider.addEventListener("touchend", handleTouchEnd);
 }
 
