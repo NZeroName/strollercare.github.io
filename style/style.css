@@ -409,6 +409,7 @@ table {
 }
 
 .slider {
+  touch-action: pan-y;
   display: flex;
   transition: transform 0.5s ease-in-out;
 }

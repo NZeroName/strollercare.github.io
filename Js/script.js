@@ -8,7 +8,9 @@ function initSlider({ sliderSelector, slideSelector, prevBtnSelector, nextBtnSel
     const totalSlides = slides.length; // Общее количество слайдов
     let index = 0; // Индекс текущего слайда
     let startX = 0; // Начальная позиция касания
+    let startY = 0 
     let endX = 0; // Конечная позиция касания
+    let horizontalSwipe = false;
     const slideWidth = 100 / slidesPerView; // Ширина одного слайда в процентах
 
     // Клонирование первых слайдов
@@ -59,22 +61,37 @@ function initSlider({ sliderSelector, slideSelector, prevBtnSelector, nextBtnSel
     // Обработка начала касания
     function handleTouchStart(event) {
         startX = event.touches[0].clientX; // Сохраняем начальную позицию касания
+        startY = event.touches[0].clientY 
+        horizontalSwipe = false
     }
 
     // Обработка движения касания
     function handleTouchMove(event) {
+      const deltaX = Math.abs(event.touches[0].clientX - startX);
+    const deltaY = Math.abs(event.touches[0].clientY - startY);
         endX = event.touches[0].clientX; // Обновляем конечную позицию касания
+         if (deltaX > deltaY) {
+        horizontalSwipe = true;
+        event.preventDefault(); // Блокируем вертикальную прокрутку
     }
+    
+    if (horizontalSwipe) {
+        // Здесь можно обработать горизонтальное движение
+        endX = event.touches[0].clientX;
+    }
+}
 
     // Обработка завершения касания
     function handleTouchEnd() {
+        
+        if (!horizontalSwipe) return
         const deltaX = startX - endX;
         // Если свайп влево, переключаем на следующий слайд
-        if (deltaX > 100) {
+        if (deltaX > 20) {
             nextSlide();
         }
         // Если свайп вправо, переключаем на предыдущий слайд
-        if (deltaX < -100) {
+        if (deltaX < -20) {
             prevSlide();
         }
     }
