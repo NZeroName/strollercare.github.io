@@ -8,7 +8,9 @@ function initSlider({ sliderSelector, slideSelector, prevBtnSelector, nextBtnSel
     const totalSlides = slides.length; // Общее количество слайдов
     let index = 0; // Индекс текущего слайда
     let startX = 0; // Начальная позиция касания
+    let startY = 0 
     let endX = 0; // Конечная позиция касания
+    let horizontalSwipe = false;
     const slideWidth = 100 / slidesPerView; // Ширина одного слайда в процентах
 
     // Клонирование первых слайдов
@@ -59,34 +61,49 @@ function initSlider({ sliderSelector, slideSelector, prevBtnSelector, nextBtnSel
     // Обработка начала касания
     function handleTouchStart(event) {
         startX = event.touches[0].clientX; // Сохраняем начальную позицию касания
+        startY = event.touches[0].clientY 
+        horizontalSwipe = false
     }
 
     // Обработка движения касания
     function handleTouchMove(event) {
+    const deltaX = Math.abs(event.touches[0].clientX - startX);
+    const deltaY = Math.abs(event.touches[0].clientY - startY);
         endX = event.touches[0].clientX; // Обновляем конечную позицию касания
+         if (deltaX > deltaY) {
+          event.preventDefault(); // Блокируем вертикальную прокрутку
+        horizontalSwipe = true;
+        endX = event.touches[0].clientX;
     }
+    
+}
 
     // Обработка завершения касания
     function handleTouchEnd() {
+        
+        if (!horizontalSwipe) return
         const deltaX = startX - endX;
         // Если свайп влево, переключаем на следующий слайд
-        if (deltaX > 100) {
+        if (deltaX > 50) {
             nextSlide();
-        }
-        // Если свайп вправо, переключаем на предыдущий слайд
-        if (deltaX < -100) {
+        } else if (deltaX < -50) { // Если свайп вправо, переключаем на предыдущий слайд
             prevSlide();
-        }
+        }    
+        
     }
 
     // Добавляем обработчики событий для кнопок
     nextBtn.addEventListener("click", nextSlide);
     prevBtn.addEventListener("click", prevSlide);
-
+    
+    const hammer = new Hammer(slider);
+    hammer.on('swipeleft', nextSlide);
+    hammer.on('swiperight', prevSlide);
     // Добавляем обработчики событий для сенсорных событий
-    slider.addEventListener("touchstart", handleTouchStart);
-    slider.addEventListener("touchmove", handleTouchMove);
-    slider.addEventListener("touchend", handleTouchEnd);
+  //  slider.addEventListener("touchstart", handleTouchStart, {passive: false});
+  //  slider.addEventListener("touchmove", handleTouchMove, {passive: false});
+  //  slider.addEventListener("touchend", handleTouchEnd);
+
 }
 
 
@@ -112,8 +129,8 @@ function blogSlider() {
         cloneSlides: true 
     })} else {
     initSlider({
-        sliderSelector: '.blog__links',
-        slideSelector: '.blog__link',
+        sliderSelector: '.blog__container .blog__links',
+        slideSelector: '.blog__container .blog__link',
         prevBtnSelector: 'blog-prev',
         nextBtnSelector: 'blog-next',
         slidesPerView: 2, 
