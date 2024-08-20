@@ -73,13 +73,9 @@ function initSlider({ sliderSelector, slideSelector, prevBtnSelector, nextBtnSel
          if (deltaX > deltaY) {
           event.preventDefault(); // Блокируем вертикальную прокрутку
         horizontalSwipe = true;
-        
-    }
-    
-    if (horizontalSwipe) {
-        // Здесь можно обработать горизонтальное движение
         endX = event.touches[0].clientX;
     }
+    
 }
 
     // Обработка завершения касания
@@ -88,15 +84,12 @@ function initSlider({ sliderSelector, slideSelector, prevBtnSelector, nextBtnSel
         if (!horizontalSwipe) return
         const deltaX = startX - endX;
         // Если свайп влево, переключаем на следующий слайд
-        if (deltaX > 60) {
-          
+        if (deltaX > 50) {
             nextSlide();
-        }
-        // Если свайп вправо, переключаем на предыдущий слайд
-        if (deltaX < -60) {
+        } else if (deltaX < -50) { // Если свайп вправо, переключаем на предыдущий слайд
             prevSlide();
-            
-        }
+        }    
+        
     }
 
     // Добавляем обработчики событий для кнопок
