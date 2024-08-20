@@ -95,20 +95,15 @@ function initSlider({ sliderSelector, slideSelector, prevBtnSelector, nextBtnSel
     // Добавляем обработчики событий для кнопок
     nextBtn.addEventListener("click", nextSlide);
     prevBtn.addEventListener("click", prevSlide);
-
+    
+    const hammer = new Hammer(slider);
+    hammer.on('swipeleft', nextSlide);
+    hammer.on('swiperight', prevSlide);
     // Добавляем обработчики событий для сенсорных событий
   //  slider.addEventListener("touchstart", handleTouchStart, {passive: false});
   //  slider.addEventListener("touchmove", handleTouchMove, {passive: false});
   //  slider.addEventListener("touchend", handleTouchEnd);
-slider.addEventListener("touchstart", function(e) {
-    alert("Тронул:", e.touches[0].clientX);
-});
-slider.addEventListener("touchmove", function(e) {
-    alert("Сдвинул:", e.touches[0].clientX);
-});
-slider.addEventListener("touchend", function(e) {
-    alert("Убрал");
-});
+
 }
 
 
@@ -134,8 +129,8 @@ function blogSlider() {
         cloneSlides: true 
     })} else {
     initSlider({
-        sliderSelector: '.blog__links',
-        slideSelector: '.blog__link',
+        sliderSelector: '.blog__container .blog__links',
+        slideSelector: '.blog__container .blog__link',
         prevBtnSelector: 'blog-prev',
         nextBtnSelector: 'blog-next',
         slidesPerView: 2, 
