@@ -87,12 +87,14 @@ function initSlider({ sliderSelector, slideSelector, prevBtnSelector, nextBtnSel
         if (!horizontalSwipe) return
         const deltaX = startX - endX;
         // Если свайп влево, переключаем на следующий слайд
-        if (deltaX > 20) {
+        if (deltaX > 60) {
+          alert(`${deltaX} влево`)
             nextSlide();
         }
         // Если свайп вправо, переключаем на предыдущий слайд
-        if (deltaX < -20) {
+        if (deltaX < -60) {
             prevSlide();
+            alert(`${deltaX} вправо`)
         }
     }
 
