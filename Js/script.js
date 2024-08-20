@@ -67,7 +67,7 @@ function initSlider({ sliderSelector, slideSelector, prevBtnSelector, nextBtnSel
 
     // Обработка движения касания
     function handleTouchMove(event) {
-      const deltaX = Math.abs(event.touches[0].clientX - startX);
+    const deltaX = Math.abs(event.touches[0].clientX - startX);
     const deltaY = Math.abs(event.touches[0].clientY - startY);
         endX = event.touches[0].clientX; // Обновляем конечную позицию касания
          if (deltaX > deltaY) {
@@ -97,18 +97,18 @@ function initSlider({ sliderSelector, slideSelector, prevBtnSelector, nextBtnSel
     prevBtn.addEventListener("click", prevSlide);
 
     // Добавляем обработчики событий для сенсорных событий
-    // slider.addEventListener("touchstart", handleTouchStart, {passive: false});
-    slider.addEventListener("touchstart", () => {
-      alert('Тронул')
-    })
-    slider.addEventListener("touchmove", () => {
-      alert('Двинул')
-    })
-    slider.addEventListener("touchend", () => {
-      alert('убрал')
-    })
-    // slider.addEventListener("touchmove", handleTouchMove, {passive: false});
-    // slider.addEventListener("touchend", handleTouchEnd);
+  //  slider.addEventListener("touchstart", handleTouchStart, {passive: false});
+  //  slider.addEventListener("touchmove", handleTouchMove, {passive: false});
+  //  slider.addEventListener("touchend", handleTouchEnd);
+slider.addEventListener("touchstart", function(e) {
+    alert("Тронул:", e.touches[0].clientX);
+});
+slider.addEventListener("touchmove", function(e) {
+    alert("Сдвинул:", e.touches[0].clientX);
+});
+slider.addEventListener("touchend", function(e) {
+    alert("Убрал");
+});
 }
 
 
